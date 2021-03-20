@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Wheather from './Wheather.js'
 import Exchange from './Exchange.js'
 import TaskList from './TaskList.js'
+import RandomNumbers from './RandomNumbers.js'
 
 export default function Main(props) {
 
   const [wheather, setWheater] = useState(true)
   const [exchange, setExchange] = useState(true)
   const [tasklist, setTasklist] = useState(true)
+  const [randomNumbers, setRandomNumbers] = useState(true)
 
   const wheaterClick = ({ target }) => {
     setWheater(target.checked)
@@ -19,6 +21,10 @@ export default function Main(props) {
 
   const tasklistClick = ({ target }) => {
     setTasklist(target.checked)
+  }
+
+  const RandomNumbersClick = ({ target }) => {
+    setRandomNumbers(target.checked)
   }
 
   return (
@@ -43,12 +49,19 @@ export default function Main(props) {
                   <span className="ml-2">Lista de Tarefas</span>
                   </label>
                 </div>
+                <div>
+                  <label className="inline-flex items-center py-5">
+                  <input type="checkbox" className="form-checkbox h-5 w-5 text-pink-600" onClick={RandomNumbersClick} value={randomNumbers} defaultChecked={randomNumbers} />
+                  <span className="ml-2">Números para Mega</span>
+                  </label>
+                </div>
               </div>
             </nav>
             <div className="w-full">
               { wheather && <Wheather /> }
               { exchange && <Exchange /> } 
-              { tasklist && <TaskList /> }
+              { tasklist && <TaskList /> } 
+              { randomNumbers && <RandomNumbers /> }
             </div>
           </div>
 )}
