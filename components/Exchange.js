@@ -32,10 +32,10 @@ export default function Exchange() {
           <h2 className="text-gray-800 capitalize text-xl font-bold">Cotação</h2>
           <div className="float-none px-2 pt-5 pb-3">  
             <img src="https://cdn1.iconfinder.com/data/icons/ios-11-glyphs/30/us_dollar-128.png" alt="dólar" title="Dólar" className="float-left w-8 h-6 top-3 right-3 sm:relative sm:top-0 sm:right-0" />
-            <label>dólar: min.: R${parseFloat(price.USD.low).toFixed(2)} máx.: R${parseFloat(price.USD.high).toFixed(2)}</label>
+            <label className="text-xs">dólar: min.: R${parseFloat(price.USD.low).toFixed(2)} máx.: R${parseFloat(price.USD.high).toFixed(2)}</label>
           </div>
           <div className="float-none px-2 pb-5">
-            <label>euro: min.: R${parseFloat(price.EUR.low).toFixed(2)} máx.: R${parseFloat(price.EUR.high).toFixed(2)}</label>
+            <label className="text-xs">euro: min.: R${parseFloat(price.EUR.low).toFixed(2)} máx.: R${parseFloat(price.EUR.high).toFixed(2)}</label>
             <img src="https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_euro_symbol_48px-128.png" alt="euro" title="Euro" className="float-left w-8 h-6 top-3 right-3 sm:relative sm:top-0 sm:right-0" />
           </div>
         </div>

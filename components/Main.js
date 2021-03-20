@@ -34,7 +34,7 @@ export default function Main(props) {
           <div>
             <label className="inline-flex items-center py-5">
             <input type="checkbox" className="form-checkbox h-5 w-5 text-green-500" onClick={exchangeClick} value={exchange} defaultChecked={exchange} />
-            <span className="ml-2">Câmbio</span>
+            <span className="ml-2">Cotações - Câmbio</span>
             </label>
           </div>
           <div>
