@@ -10,8 +10,6 @@ export default function Wheather() {
   function getWheather() {
     load && setLoad(false)
   
-    console.log('foi')    
-
     fetch(encodeURI(`http://localhost:3000/api/wheather?city=${arrumaCidade()}`))
     .then(res => res.json())
     .then(data => { 
