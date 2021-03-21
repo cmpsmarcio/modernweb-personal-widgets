@@ -24,7 +24,7 @@ export default function Main(props) {
   return (
     <div className="flex w-full h-full">
       <nav className="flex w-2/5 bg-gray-800 text-gray-50 px-4 tex-gray-900 relative">
-        <div className="mt-4 p-8">
+        <div className="mt-4 py-8">
           <div>
             <label className="inline-flex items-center py-5">
               <input type="checkbox" className="form-checkbox h-5 w-5 text-indigo-600" onClick={weaterClick} value={weather} defaultChecked={weather} />
