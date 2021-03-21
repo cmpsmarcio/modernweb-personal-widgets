@@ -53,9 +53,9 @@ export default function Weather() {
       <article className="border-l-4 border-yellow-400 bg-yellow-50 sm:grid grid-cols-5 bg-white shadow-lg p-4 relative lg:mx-auto sm:p-4 rounded-lg lg:col-span-2 lg:ml-20" >
         <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-128.png" alt="Just a flower" className="lg:w-full md:w-5/12 sm:w-5/12 w-0 rounded-lg" />
         <div className="pt-5 self-center sm:pt-0 sm:pl-10 col-span-3">
-          <label className="text-xs italic">Cidade,UF ex.: Campinas,SP e tecle enter</label>
+          <label htmlFor="inputCity" className="text-xs italic">Cidade,UF ex.: Campinas,SP e tecle enter</label>
           {erro && <p className="text-xs text-red-500 italic">Cidade inválida</p>}
-          <div><input type='text' className="flex-none mb-3 text-gray-800 capitalize text-sm md:text-base lg:text-xl font-bold" onKeyDown={onKeyDown} onChange={handleTextChange} defaultValue={city}></input></div>
+          <div><input id="inputCity" type='text' className="flex-none mb-3 text-gray-800 capitalize text-sm md:text-base lg:text-xl font-bold" onKeyDown={onKeyDown} onChange={handleTextChange} defaultValue={city}></input></div>
           <label>{weather.temp}º</label>
           <img src="https://cdn0.iconfinder.com/data/icons/weather-line-19/32/Thermometer_Cold-128.png" alt="Temperature" className="float-left w-8 h-6 top-3 right-3 sm:relative sm:top-0 sm:right-0" />
           <label className="text-sm">&nbsp;{weather.description}</label>
