@@ -26,7 +26,7 @@ export default function Exchange() {
   return (
     <div className="py-2" >
       {load && getPrice()}
-      <article className="border-l-4 border-green-400 bg-green-100 sm:grid grid-cols-5 bg-white shadow-lg p-7 relative lg:mx-auto sm:p-4 rounded-lg lg:col-span-2 lg:ml-20" >
+      <article className="border-l-4 border-blue-400 bg-blue-100 sm:grid grid-cols-5 bg-white shadow-lg p-7 relative lg:mx-auto sm:p-4 rounded-lg lg:col-span-2 lg:ml-20" >
         <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Money-Graph-128.png" alt="Just a flower" className="lg:w-full md:w-5/12 sm:w-5/12 w-0 rounded-lg" />
         <div className="pt-5 self-center sm:pt-0 sm:pl-10 col-span-3">
           <h2 className="text-gray-800 capitalize text-sm md:text-base lg:text-xl font-bold">Cotação</h2>
