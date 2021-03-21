@@ -1,8 +1,22 @@
-export default function RandomNumbers() {
+import { useEffect, useState } from "react"
 
-  function getRandomArbitrary(min, max) {
-    return Math.round( Math.random() * (max - min) + min);
+export default function RandomNumbers() {
+  const [numbers, setNumbers] = useState('')
+  const [load, setLoad] = useState(true)
+
+  function getLuckyNumbers(min, max, limit) {
+    load && setLoad(false)
+
+    let luckyNumbers = ''
+    for (let i = 1; i <= limit; i++) {
+      luckyNumbers += `${Math.round( Math.random() * (max - min) + min)}${i === limit ? '' : '-'}`
+    }
+    return luckyNumbers
   }
+
+  useEffect(() => {
+    load && setNumbers(getLuckyNumbers(1, 60, 6))
+  })
 
   return (
     <div className="py-2" >
@@ -12,7 +26,7 @@ export default function RandomNumbers() {
           <h2 className="text-sm md:text-base lg:text-xl font-bold pb-4 italic text-gray-800 capitalize font-bold">Números da sorte</h2>
           <div className="float-none text-xs sm:text-base px-2 py-5">  
             <img src="https://e7.pngegg.com/pngimages/439/430/png-clipart-musical-note-eighth-note-miscellaneous-music-symbols.png" alt="music-simbol" title="Simbolo musical" className="float-left w-8 h-6 top-3 right-3 sm:relative sm:top-0 sm:right-0" />
-            <label>{`${getRandomArbitrary(1, 60)}-${getRandomArbitrary(1, 60)}-${getRandomArbitrary(1, 60)}-${getRandomArbitrary(1, 60)}-${getRandomArbitrary(1, 60)}-${getRandomArbitrary(1, 60)}`}</label>
+            <label>{numbers}</label>
           </div>
         </div>
         <div className="justify-self-end">
