@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Weather from './Weather.js'
 import Exchange from './Exchange.js'
 import TaskList from './TaskList.js'
+import RandomNumbers from './RandomNumbers.js'
 
 export default function Main(props) {
 
   const [weather, setWeater] = useState(true)
   const [exchange, setExchange] = useState(true)
   const [tasklist, setTasklist] = useState(true)
+  const [randomNumbers, setRandomNumbers] = useState(true)
 
   const weaterClick = ({ target }) => {
     setWeater(target.checked)
@@ -21,10 +23,14 @@ export default function Main(props) {
     setTasklist(target.checked)
   }
 
+  const RandomNumbersClick = ({ target }) => {
+    setRandomNumbers(target.checked)
+  }
+
   return (
     <div className="flex w-full h-full">
       <nav className="flex w-2/5 bg-gray-800 text-gray-50 px-4 tex-gray-900 relative">
-        <div className="mt-4 py-8">
+        <div className="mt-4 p-8">
           <div>
             <label className="inline-flex items-center py-5">
               <input type="checkbox" className="form-checkbox h-5 w-5 text-indigo-600" onClick={weaterClick} value={weather} defaultChecked={weather} />
@@ -43,12 +49,19 @@ export default function Main(props) {
             <span className="ml-2">Lista de Tarefas</span>
             </label>
           </div>
+          <div>
+            <label className="inline-flex items-center py-5">
+            <input type="checkbox" className="form-checkbox h-5 w-5 text-pink-600" onClick={RandomNumbersClick} value={randomNumbers} defaultChecked={randomNumbers} />
+            <span className="ml-2">Números para Mega</span>
+            </label>
+          </div>
         </div>
       </nav>
       <div className="w-full">
         { weather && <Weather /> }
         { exchange && <Exchange /> } 
-        { tasklist && <TaskList /> }
+        { tasklist && <TaskList /> } 
+        { randomNumbers && <RandomNumbers /> }
       </div>
     </div>
   )
